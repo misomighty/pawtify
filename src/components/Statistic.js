@@ -18,7 +18,7 @@ const Line1 = styled.h2`
 `
 
 const Line2 = styled.h1`
-    font-size: 7em;
+    font-size: 5em;
     margin-top: 0;
     margin-bottom: 46px;
 `

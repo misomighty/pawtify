@@ -139,7 +139,7 @@ const CTA2Text = styled.h2`
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 16px;
   line-height: 42px;
   color: #FFFFFF;
   margin-bottom: 42px;
@@ -213,7 +213,7 @@ function App() {
           <UniversalPadding>
             <HeroContents style={{ paddingTop: '15px'}}>
           <Grid container direction="column">
-            <Grid item><LogoBar /></Grid>
+            <Grid item style={{ height: '70px' }}><LogoBar /></Grid>
             <Grid item><MenuBar /></Grid>
           </Grid>
          <CTAWrapper>

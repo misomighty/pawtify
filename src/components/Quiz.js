@@ -33,11 +33,14 @@ const QuizTitle = styled.h1`
     font-family: Roboto;
     font-weight: 900;
     font-size: 36px;
+    margin-bottom: 25px;
+    text-align: center;
 `
 
 const StyledSelect = styled(Select)`
-    width: 350px;
+    width: 35vw;
     color: #fff !important;
+    margin-bottom: 25px;
 `
 
 const useStyles = makeStyles((theme) => ({
@@ -61,10 +64,11 @@ const Quiz = () => {
         <QuizBody>
             <XBTN><CloseIcon /></XBTN>
             <QuizTitle>Pet Profile</QuizTitle>
-            <PawtifyForm>
-            <TextField id="filled-basic" label="Name" variant="filled" color="secondary" className={classes.root} />
-            <TextField id="filled-basic" label="Email" variant="filled" color="secondary" className={classes.root} />
-            <TextField id="filled-basic" label="Phone number" variant="filled" color="secondary" className={classes.root} />
+            <PawtifyForm buttonLabel="Submit">
+            <TextField id="filled-basic" label="First" variant="filled" className={classes.root} />
+            <TextField id="filled-basic" label="Last" variant="filled" className={classes.root} />
+            <TextField id="filled-basic" label="Email" variant="filled" className={classes.root} />
+            <TextField id="filled-basic" label="Phone number" variant="filled" className={classes.root} />
         <FormControl variant="filled">
         <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>Number of people in your home</InputLabel>
         <StyledSelect
@@ -81,37 +85,91 @@ const Quiz = () => {
           <MenuItem value={5}>5+ persons</MenuItem>
         </StyledSelect>
       </FormControl>
-            <FormLabel component="legend">Number of people in your home</FormLabel>
-                <RadioGroup aria-label="household" name="household">
-                    <FormControlLabel value="2" control={<Radio />} label="1 to 2 persons" />
-                    <FormControlLabel value="4" control={<Radio />} label="3 to 4 persons" />
-                    <FormControlLabel value="5" control={<Radio />} label="5+ persons" />
-                </RadioGroup>
-                <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
-                <RadioGroup aria-label="haschildren" name="hasChildren">
-                    <FormControlLabel value="yes" control={<Radio />} label="yes" />
-                    <FormControlLabel value="4" control={<Radio />} label="no" />
-                </RadioGroup>
-                <FormLabel component="legend">Type of dwelling</FormLabel>
-                <RadioGroup aria-label="housing" name="housing">
-                    <FormControlLabel value="house" control={<Radio />} label="House" />
-                    <FormControlLabel value="condo" control={<Radio />} label="Condo" />
-                    <FormControlLabel value="apartment" control={<Radio />} label="Apartment" />
-                </RadioGroup>
-                <FormLabel component="legend">How many hours during the working days will you typically be away from home?
-                </FormLabel>
-                <RadioGroup aria-label="hoursaway" name="hoursAway">
-                    <FormControlLabel value="3" control={<Radio />} label="1 to 3 hours" />
-                    <FormControlLabel value="5" control={<Radio />} label="3 to 5 hours" />
-                    <FormControlLabel value="7" control={<Radio />} label="5 to 7 hours" />
-                    <FormControlLabel value="8" control={<Radio />} label="8+ hours" />
-                </RadioGroup>
-                <FormLabel component="legend">Where will the pet be when you’re not home?</FormLabel>
-                <RadioGroup aria-label="whereWillPetLive" name="whereWillPetLive">
-                    <FormControlLabel value="indoor" control={<Radio />} label="Indoor" />
-                    <FormControlLabel value="outdoor" control={<Radio />} label="Outdoor" />
-                    <FormControlLabel value="garage" control={<Radio />} label="Garage" />
-                </RadioGroup>
+
+      <FormControl variant="filled">
+        <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>Do you live with any children in your home?</InputLabel>
+        <StyledSelect
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          label="Age"
+          style={{ color: '#fff' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={2}>1 to 2 persons</MenuItem>
+          <MenuItem value={4}>3 to 4 persons</MenuItem>
+          <MenuItem value={5}>5+ persons</MenuItem>
+        </StyledSelect>
+      </FormControl>
+
+      <FormControl variant="filled">
+        <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>Do you live with any children in your home?</InputLabel>
+        <StyledSelect
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          label="Age"
+          style={{ color: '#fff' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={'yes'}>Yes</MenuItem>
+          <MenuItem value={'no'}>No</MenuItem>
+        </StyledSelect>
+      </FormControl>
+
+      <FormControl variant="filled">
+        <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>Type of dwelling</InputLabel>
+        <StyledSelect
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          label="Age"
+          style={{ color: '#fff' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="house">House</MenuItem>
+          <MenuItem value="condo">Condo</MenuItem>
+          <MenuItem value="apartment">Apartment</MenuItem>
+        </StyledSelect>
+      </FormControl>
+
+      <FormControl variant="filled">
+        <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>How long are you typically away from home?</InputLabel>
+        <StyledSelect
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          label="hoursaway"
+          style={{ color: '#fff' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="3">1 to 3 hours</MenuItem>
+            <MenuItem value="5">3 to 5 hours</MenuItem>
+            <MenuItem value="7">5 to 7 hours</MenuItem>
+            <MenuItem value="8">8+ hours</MenuItem>
+        </StyledSelect>
+      </FormControl>
+
+      <FormControl variant="filled">
+        <InputLabel id="demo-simple-select-outlined-label" style={{ color: '#fff'}}>Where will the pet be when you’re not home?</InputLabel>
+        <StyledSelect
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          label="whereWillPetLive"
+          style={{ color: '#fff' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="indoor">Indoor</MenuItem>
+            <MenuItem value="outdoor">Outdoor</MenuItem>
+            <MenuItem value="garage">garage</MenuItem>
+        </StyledSelect>
+      </FormControl>
             </PawtifyForm>
         </QuizBody>
     )

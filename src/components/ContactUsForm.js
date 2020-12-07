@@ -24,7 +24,7 @@ const FormTitle = styled.h1`
     text-align: center;
     color: #FFFFFF;
     margin-top: 76px;
-    margin-bottom: 22px;
+    margin-bottom: 0;
 `
 
 const Form = styled.form`
@@ -32,6 +32,7 @@ const Form = styled.form`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 `
 
 const InputWrapper = styled.div`
@@ -39,6 +40,7 @@ const InputWrapper = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 `
 
 const Input = styled.input`
@@ -76,7 +78,6 @@ const Textarea = styled.textarea`
 const PawtifyForm = ({ title, children, buttonLabel }) => {
     return (
         <FormContainer>
-            <FormTitle>{title}</FormTitle>
             <form noValidate autoComplete="off">
                     {children}
             <PrimaryButton>{buttonLabel}</PrimaryButton>
