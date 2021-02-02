@@ -29,14 +29,14 @@ const LogoBar = () => {
         spacing={9}
       >
       <Grid item md={1}><Logo>logoipsum</Logo></Grid>
-      <Grid container item direction="row" alignItems="center" justify="flex-end" md={11}>
+      <Grid  style={{marginTop: '20px'}}  container item direction="row" alignItems="center" justify="flex-end" md={11}>
         <Grid item>
             <ContactCard icon={Phone} header="CALL US" subheader="(210) 373-6730" />
         </Grid>
         <Grid item>
             <ContactCard icon={AccessTimeIcon} header="HOURS" subheader="Mon-Fri 11am - 7:30pm" />
         </Grid>
-        <Grid item>
+        <Grid item style={{marginTop: '10px'}} >
             <PrimaryButton variant="contained" color="secondary" style={{ width: '211px'}}>
                 Contact Us
             </PrimaryButton>

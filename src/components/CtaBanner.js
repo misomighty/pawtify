@@ -31,7 +31,7 @@ const Text = styled.h3`
 
 const CtaBanner = ({ children }) => {
     return(
-        <Wrapper>
+        <Wrapper className="cta-banner">
             <Content>
                 <Text>
                     {children}

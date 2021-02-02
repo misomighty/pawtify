@@ -25,4 +25,16 @@ code {
     display: none;
   }
 
+  .cta-banner {
+    display: none!important;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+  .testimonials-parent {
+    display: none;
+  }
+
 }
