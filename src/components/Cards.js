@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ScrollAnimation from 'react-animate-on-scroll'
 import boarding from '.././img/dog_boarding_24x.png'
 import collar from '.././img/dog_collar_24x.png'
 import daycare from '.././img/dog_daycare_24x.png'
@@ -77,27 +78,31 @@ const Card = (props) => {
 const Cards = () => {
     return (
         <CenterContent>
-                    <CardContainer>
-            <Card icon={boarding} title="Pet Profile">
-            This is your starting point for letting the shelter know what you want and need in a rescue pet. <em>Highly recommended</em>
-            </Card>
-            <Card icon={daycare} title="Education">
-            Please feel free to contact us anytime. We are here to support you in the process of adopting and owning a pet.
-            </Card>
-            <Card icon={grooming} title="Coming Soon">
-            Check out our newsletter to learn more about our story and behind the scenes on our up-and-coming products!
-            </Card>
-            <Card icon={food} title="Support Group">
-            Owning a pet is a responsibility that takes a good heap of patience. Many questions can be found and answered through our forum.
-            </Card>
-            <Card icon={training} title="Pet Training">
-            Also check out training videos from our partners.
-            </Card>
-            <Card icon={collar} title="Shop Willie & Roo">
-            <a href="https://www.willieandroo.com/" target="_blank">Go to shop</a>
-            </Card>
-        </CardContainer>
-            <PrimaryButton variant="contained" color="secondary" style={{ width: '124px', marginTop: '75px' }}>Learn More</PrimaryButton>
+            <ScrollAnimation animateIn="fadeInUp" delay="500">
+                <CardContainer>
+                    <Card icon={boarding} title="Pet Profile">
+                    This is your starting point for letting the shelter know what you want and need in a rescue pet. <em>Highly recommended</em>
+                    </Card>
+                    <Card icon={daycare} title="Education">
+                    Please feel free to contact us anytime. We are here to support you in the process of adopting and owning a pet.
+                    </Card>
+                    <Card icon={grooming} title="Coming Soon">
+                    Check out our newsletter to learn more about our story and behind the scenes on our up-and-coming products!
+                    </Card>
+                    <Card icon={food} title="Support Group">
+                    Owning a pet is a responsibility that takes a good heap of patience. Many questions can be found and answered through our forum.
+                    </Card>
+                    <Card icon={training} title="Pet Training">
+                    Also check out training videos from our partners.
+                    </Card>
+                    <Card icon={collar} title="Shop Willie & Roo">
+                    <a href="https://www.willieandroo.com/" target="_blank">Go to shop</a>
+                    </Card>
+                </CardContainer>
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="fadeIn" delay="1000">
+                <PrimaryButton variant="contained" color="secondary" style={{ width: '124px', marginTop: '75px' }}>Learn More</PrimaryButton>
+            </ScrollAnimation>
         </CenterContent>
 
     )

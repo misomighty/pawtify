@@ -20,27 +20,15 @@ const MenuBar = () => {
 
     return (
     <AppBar position="static" color="default" maxWidth="lg" className={classes.root}>
-  <Toolbar>
-    <Typography variant="h6" className={classes.title}>
-      Services
-    </Typography>
-    <Typography variant="h6" className={classes.title}>
-      Donate
-    </Typography>
-    <Typography variant="h6" className={classes.title}>
-      Facilities
-    </Typography>
-    <Typography variant="h6" className={classes.title}>
-      Reviews
-    </Typography>
-    <Typography variant="h6" className={classes.title}>
-      Show
-    </Typography>
-    <Typography variant="h6" className={classes.title}>
-      About
-    </Typography>
-  </Toolbar>
-</AppBar>
+      <Toolbar>
+        <Typography variant="h6" className={classes.title}>
+          About
+        </Typography>
+        <Typography variant="h6" className={classes.title}>
+          Take The Quiz
+        </Typography>
+      </Toolbar>
+    </AppBar>
     )
 }
 
