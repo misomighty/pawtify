@@ -7,8 +7,9 @@ const FormContainer = styled.div`
     background: #5D62B5;
     border-radius: 40px;
     top: 136px;
-    left: 255px;
-    width: 485px;
+    left: 0;
+    width: 34%;
+    margin-left: 80px;
 `
 
 const ContactUsFormContainer = styled(FormContainer)`
@@ -43,6 +44,11 @@ const InputWrapper = styled.div`
     margin-bottom: 15px;
 `
 
+const Row = styled.div`
+    width: 100%;
+    text-align:center;
+`
+
 const Input = styled.input`
     border-radius: 10px;
     padding: 10px;
@@ -52,6 +58,7 @@ const Input = styled.input`
     margin-top: 20px; 
     margin-right: 5px;
     margin-left: 5px;
+    min-width: 190px;
     &::placeholder {
         color: #fff;
     }
@@ -70,6 +77,7 @@ const Textarea = styled.textarea`
     padding: 10px;
     font-family: Roboto;
     font-size: 14px;
+    min-width: 190px;
     &::placeholder {
         color: #fff;
     }
@@ -93,10 +101,14 @@ const ContactUsForm = () => {
                 <FormTitle>Contact Us</FormTitle>
                 <Form noValidate autoComplete="off">
                 <InputWrapper>
+                    <Row>
                         <Input placeholder="Name" />
                         <Input placeholder="Email" />
+                    </Row>
+                    <Row>
                         <Input placeholder="Phone Number" />
                         <Input placeholder="Services" />
+                    </Row>
                         <Textarea placeholder="Tell us about your pets" />
                 </InputWrapper>
                 <PrimaryButton>Schedule an appointment</PrimaryButton>

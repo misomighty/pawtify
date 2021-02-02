@@ -19,7 +19,7 @@ const MenuBar = () => {
     const classes = useStyles()
 
     return (
-    <AppBar position="static" color="default" className={classes.root}>
+    <AppBar position="static" color="default" maxWidth="lg" className={classes.root}>
   <Toolbar>
     <Typography variant="h6" className={classes.title}>
       Services

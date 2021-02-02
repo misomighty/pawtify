@@ -31,6 +31,7 @@ import { ImpactBlock } from './components/ImpactBlock'
 import { Sitemap } from './components/Sitemap'
 import { CtaBanner } from './components/CtaBanner'
 import { QuizModal } from './components/QuizModal'
+import { QuizComponent } from './components/QuizComponent'
 
 const Body = styled.div``
 
@@ -75,6 +76,9 @@ const CenterContent = styled.div`
   margin-left: auto;
   margin-top: 0;
   margin-bottom: 50px;
+  z-index: 10;
+  background: #f5f5f5;
+  position: relative;
 `
 
 const FloatingContentSection = styled.div`
@@ -86,7 +90,7 @@ const FloatingContentSection = styled.div`
   background-position: -2em 12em;
   background-size: 73%;
   border-radius: 40px;
-  height: 640px;
+  max-height: 1000px;
   margin: 0 auto;
 `
 
@@ -116,7 +120,7 @@ const FloatingContentHeader = styled.h1`
   font-weight: 900;
   font-size: 25px;
   width: 75%;
-  line-height: 34px;
+  line-height: 100%;
 `
 
 const CTA2 = styled.div`
@@ -153,8 +157,8 @@ const ContactUsSection = styled.div`
   position: relative;
   background-image: url(${blob3}), url(${StylizedCircles}), url(${field});
   height: 80vh;
-  height: 850px;
-  background-position: 4em 1em,9em 11em,0 0;
+  min-height: 1050px;
+  background-position: 2em -2em,9em 20em,0 0;
   background-size: 765px,317px,cover;
   background-repeat: no-repeat;
 `
@@ -166,8 +170,9 @@ const VideoSection = styled(CenterContent)`
 `
 
 const Testimonials = styled.div`
-  margin-top: 120px;
   height: 450px;
+  z-index: 3;
+  position:relative;
 `
 
 const FlexRow = styled.div`
@@ -182,18 +187,18 @@ const ImpactSection = styled.div`
   position: relative;
 `
 const ImpactBlockRow = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   margin-top: 80px;
-  width: 90%
+  float: left;
+  margin: 0 auto;
+  width: 100%;
 `
 const Cat2 = styled.img`
   position: absolute;
   height: 273px;
   border-radius: 40px;
-  bottom: 13em;
-  right: 12em;
+  bottom: 4em;
+  right: 2em;
 `
 const Footer = styled.div`
     display: flex;
@@ -208,15 +213,15 @@ const Footer = styled.div`
 function App() {
   return (
     <Body>
-      <StyledContainer maxWidth="lg" disableGutters>
+      <StyledContainer maxWidth="false" disableGutters>
         <HeroComponent>
           <UniversalPadding>
             <HeroContents style={{ paddingTop: '15px'}}>
-          <Grid container direction="column">
+          <Grid container direction="column" className="header-container">
             <Grid item style={{ height: '70px' }}><LogoBar /></Grid>
             <Grid item><MenuBar /></Grid>
           </Grid>
-         <CTAWrapper>
+         <CTAWrapper style={{marginLeft: '100px'}}>
            <HeroTitle>Find your new best friend</HeroTitle>
            <QuizModal>Create your pet profile</QuizModal>
         </CTAWrapper> 
@@ -227,10 +232,10 @@ function App() {
           <FloatingContentSection>
               <FloatingContent>
                 <ChevronIcon>Who we are</ChevronIcon>
-                <FloatingContentHeader>
+                <FloatingContentHeader  style={{fontSize: '3vw'}}>
                 We are what convenience and innovation could look like
                 </FloatingContentHeader>
-                <p>
+                <p style={{fontSize: '1.5vw'}}>
                 The world is evolving fast. With years of experience, working in a animal shelter as well as years of software development, we have a vision to make the adoption process smooth for both the adopter and the shelter through a one cloud management system.
                 </p>
               </FloatingContent>
@@ -276,20 +281,17 @@ function App() {
           <Testimonials>
           <UniversalPadding>
             <FlexRow>
-              <div style={{ flex: '1 0 34%' }}>
-                <ChevronIcon color="#5D62B5">Our customers</ChevronIcon>
-                <Header>We are here for you and them...</Header>
-              </div>
-              <FlexRow>
-                <Testimony name="Cullen Bohannon" img={testimony2} style={{ marginLeft: '24px' }}>
-                “Pawtify really helped me prepare for owning a pet. Using the Pet Profiler to create my form for the shelter was informative not just for the rescue shelter but really helped me think about all the things I need to do to prepare to own a dog.”
-                </Testimony>
-                <Testimony name="Jennifer Thomas" img={testimony1}>
-                “Once I created my Pet Profile, I knew exactly what to ask the rescue shelter. It had me think about stuff, I hadn't thought of. I found it very helpful in bridging the conversation between me and the shelter.”
-                </Testimony>
-              </FlexRow>
+              <ChevronIcon color="#5D62B5" style={{zIndex: '3'}}>Our customers</ChevronIcon>
             </FlexRow>
-            
+            <FlexRow style={{float:'left', maxWidth:'1300px'}} className='testimonials'>
+              <Header style={{fontFamily: 'Roboto', background: 'rgb(245 245 245 / .5)', paddingTop: '20px', paddingRight:'20px', paddingBottom: '20px', paddingLeft:'20px', marginLeft:'20px', borderRadius: '25px', width:'73%'}}>We are here for you and them...</Header>
+              <Testimony name="Cullen Bohannon" img={testimony2} style={{ marginLeft: '24px', float:'left', width:'width;'}}>
+                “Pawtify really helped me prepare for owning a pet. Using the Pet Profiler to create my form for the shelter was informative not just for the rescue shelter but really helped me think about all the things I need to do to prepare to own a dog.”
+              </Testimony>
+              <Testimony name="Jennifer Thomas" img={testimony1} style={{float:'left'}}>
+                “Once I created my Pet Profile, I knew exactly what to ask the rescue shelter. It had me think about stuff, I hadn't thought of. I found it very helpful in bridging the conversation between me and the shelter.”
+              </Testimony>
+            </FlexRow>
           </UniversalPadding>
         </Testimonials>
         </VideoSection>
@@ -297,7 +299,7 @@ function App() {
           <UniversalPadding style={{ position: 'relative '}}>
             <Cat2 src={cat2} alt="friendly black cat" />
             <ChevronIcon style={{ marginTop: '110px' }}>Our impact</ChevronIcon>
-            <Header style={{ marginTop: '32px', color: '#ffffff', fontSize: '48px', width: '50%' }}>We are working hard to make our impact</Header>
+            <Header style={{ fontFamily: 'Roboto', marginTop: '32px',marginBottom:'90px', color: '#ffffff', fontSize: '4vw', width: '50%' }}>We are working hard to make our impact</Header>
             <ImpactBlockRow>
               <ImpactBlock icon={impactDuck} alt="rubby duck icon" title="171" subtitle="surveys" />
               <ImpactBlock icon={impactHouse} alt="house icon" title="2020" subtitle="established" />
@@ -307,6 +309,7 @@ function App() {
           </UniversalPadding>
           <CtaBanner>Adopting a pet through Pawtify is a fun experience!</CtaBanner>
         </ImpactSection>
+          <QuizComponent />
         <Sitemap />
         <Footer>
           <p>

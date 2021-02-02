@@ -2,21 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-flow: row nowrap;
-    margin-right: 70px;
+    float:left;
+    min-width: 24%;
 `
 
 const FlexWrapper = styled.div`
-    display: flex;
-    flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    float:left;
+    font-size: 1vw;
 `
 
 const Icon = styled.img`
     margin-right: 12px;
+    margin-left:30px;
     height: 59px;
+    float:left;
 `
 
 const Title = styled.h1`

@@ -9,16 +9,16 @@ const Wrapper = styled.div`
     color: #ffffff;
     font-weight: 900;
     font-family: Roboto;
-    width: 375px;
+    width: 52%;
 `
 
 const Line1 = styled.h2`
-    font-size: 1.8em;
+    font-size: 4vw;
     margin-bottom: 46px;
 `
 
 const Line2 = styled.h1`
-    font-size: 5em;
+    font-size: 9vw;
     margin-top: 0;
     margin-bottom: 46px;
 `
