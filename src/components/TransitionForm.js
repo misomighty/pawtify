@@ -19,6 +19,10 @@ const StyledPage = styled(animated.div)`
   flex-basis: 80%;
 `
 
+const Arrow = styled.div`
+  visibility: ${({ isHidden }) => (isHidden ? 'hidden' : 'visible')};
+`
+
 const pages = [
   ({ style }) => (
     <StyledPage style={style}>
@@ -43,12 +47,16 @@ const TransitionForm = () => {
       <FormTitle>Find the Perfect Pet for You</FormTitle>
       <Breadcrumb index={index} pages={pages} />
       <Wrapper className="simple-trans-main">
-        <div onClick={onBack}>Back</div>
+        <Arrow isHidden={index === 0} onClick={onBack}>
+          Back
+        </Arrow>
         {transitions.map(({ item, props, key }) => {
           const Page = pages[item]
           return <Page key={key} style={props} />
         })}
-        <div onClick={onForward}>Go</div>
+        <Arrow isHidden={index === pages.length - 1} onClick={onForward}>
+          Go
+        </Arrow>
       </Wrapper>
     </>
   )
