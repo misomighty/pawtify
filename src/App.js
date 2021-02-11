@@ -202,6 +202,15 @@ const Cat2 = styled.img`
   bottom: 4em;
   right: 2em;
 `
+
+const QuizComponentContainer = styled.div`
+  width: 100%;
+  background-image: url(/static/media/kittens.53421956.png);
+  background-position: center;
+  padding: 100px 0;
+  background-attachment: fixed;
+`
+
 const Footer = styled.div`
     display: flex;
     flex-flow: row nowrap;
@@ -331,7 +340,9 @@ function App() {
           </UniversalPadding>
           <CtaBanner className="cta-banner">Adopting a pet through Pawtify is a fun experience!</CtaBanner>
         </ImpactSection>
+        <QuizComponentContainer id="quiz">
           <QuizComponent />
+        </QuizComponentContainer>
         <Sitemap />
         <Footer>
           <p>

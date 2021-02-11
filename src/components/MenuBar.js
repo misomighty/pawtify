@@ -25,7 +25,7 @@ const MenuBar = () => {
           About
         </Typography>
         <Typography variant="h6" className={classes.title}>
-          Take The Quiz
+          <a href="#quiz">Take The Quiz</a>
         </Typography>
       </Toolbar>
     </AppBar>
