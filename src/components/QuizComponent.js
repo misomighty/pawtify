@@ -5,7 +5,6 @@ import { PrimaryButton } from './PrimaryButton'
 import { TransitionForm } from './TransitionForm'
 
 const Wrapper = styled.div`
-  width: 100%;
   max-width: 700px;
   text-align: center;
   margin: 100px auto 0 auto;
@@ -34,8 +33,8 @@ const FormLabel = styled.label`
   display: block;
   width: 80%;
   height: 100%;
-  text-align: left;
-  margin: 0 0 5px 10%;
+  text-align: center;
+  margin: 0 0 10px 10%;
   &::placeholder {
     color: #fff;
   }
@@ -76,6 +75,38 @@ const Page1 = ({ style }) => {
         <option value="4" label="3 to 4 persons" />
         <option value="5" label="5+ persons" />
       </SelectOption>
+    </div>
+  )
+}
+
+const Page2 = ({ style }) => {
+  return (
+    <div>
+      <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
+      <SelectOption aria-label="haschildren" name="hasChildren">
+          <option value="yes" label="Yes" />
+          <option value="4" label="No" />
+      </SelectOption>
+    </div>
+  )
+}
+
+const Page3 = ({ style }) => {
+  return (
+    <div>
+      <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
+      <SelectOption aria-label="haschildren" name="hasChildren">
+          <option value="yes" label="Yes" />
+          <option value="4" label="No" />
+      </SelectOption>
+    </div>
+  )
+}
+
+const Page4 = ({ style }) => {
+  return (
+    <div>
+      <FormLabel component="legend">ETC PUT MORE QUESTIONS HERE...</FormLabel>
     </div>
   )
 }
@@ -134,4 +165,4 @@ const QuizComponent = () => {
   )
 }
 
-export { QuizComponent, Page1, FormTitle }
+export { QuizComponent, Page1, Page2, Page3, Page4, FormTitle }
