@@ -2,79 +2,93 @@ import React from 'react'
 import styled from 'styled-components'
 import { animated, useSpring } from 'react-spring'
 import { PrimaryButton } from './PrimaryButton'
+import { TransitionForm } from './TransitionForm'
 
 const Wrapper = styled.div`
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    margin: 100px auto 0 auto;
-    background: #5D62B5;
-    border-radius: 40px;
-    padding:20px 40px 40px 40px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  margin: 100px auto 0 auto;
+  background: #5d62b5;
+  border-radius: 40px;
+  padding: 20px 40px 40px 40px;
 `
 
 const FormTitle = styled.h1`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
 `
 
 const FormLabel = styled.label`
-    border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  background: transparent;
+  float: none;
+  clear: both;
+  display: block;
+  width: 80%;
+  height: 100%;
+  text-align: left;
+  margin: 0 0 5px 10%;
+  &::placeholder {
     color: #fff;
-    background: transparent;
-    float: none;
-    clear: both;
-    display: block;
-    width: 80%;
-    height: 100%;
-    text-align: left;
-    margin: 0 0 5px 10%;
-    &::placeholder {
-        color: #fff;
-    }
+  }
 `
 
 const SelectOption = styled.select`
-    padding: 5px;
+  padding: 5px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: 80%;
+  height: 35px;
+  font-size: 14px;
+  margin-bottom: 20px;
+
+  option {
     color: #fff;
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    width: 80%;
-    height: 35px;
-    font-size: 14px;
-    margin-bottom: 20px;
-
-    option {
-        color: #fff;
-        background: #5D62B5;
-        display: flex;
-        white-space: pre;
-        min-height: 20px;
-        padding: 0px 2px 1px;
-    }
-    &::placeholder {
-        color: #fff;
-    }
-
-
+    background: #5d62b5;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
+  }
+  &::placeholder {
+    color: #fff;
+  }
 `
 
+const Page1 = ({ style }) => {
+  return (
+    <div>
+      <FormLabel component="legend" style={{ marginTop: '0px' }}>
+        Number of People in Your Home
+      </FormLabel>
+      <SelectOption aria-label="household" name="household">
+        <option value="2" label="1 to 2 persons" />
+        <option value="4" label="3 to 4 persons" />
+        <option value="5" label="5+ persons" />
+      </SelectOption>
+    </div>
+  )
+}
+
 const QuizComponent = () => {
-    const [clicked, setClicked] = React.useState(false)
-    const springProps = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-      })
-    return (
-        <Wrapper>
-            <FormTitle>Find the Perfect Pet for You</FormTitle>
+  const [clicked, setClicked] = React.useState(false)
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  })
+  return (
+    <Wrapper>
+      {/* <FormTitle>Find the Perfect Pet for You</FormTitle>
 
             <FormLabel component="legend" style={{ marginTop:"0px" }}>Number of People in Your Home</FormLabel>
             <SelectOption aria-label="household" name="household">
@@ -113,9 +127,11 @@ const QuizComponent = () => {
                 <option value="garage" label="Garage" />
             </SelectOption>
 
-            <PrimaryButton>Submit Answers</PrimaryButton>
-        </Wrapper>
-    )
+            <PrimaryButton>Submit Answers</PrimaryButton> */}
+
+      <TransitionForm />
+    </Wrapper>
+  )
 }
 
-export { QuizComponent }
+export { QuizComponent, Page1, FormTitle }
