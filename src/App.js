@@ -448,7 +448,7 @@ function App() {
         </QuizComponentContainer>
         <Sitemap />
         <Footer>
-          <p>Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod</p>
+          <p>All Rights Reserved</p>
           <p>© 2020 Pawtify. Privacy Policy | Terms & Conditions</p>
         </Footer>
       </StyledContainer>
