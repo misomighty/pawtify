@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState, useCallback } from 'react'
 import { useTransition, animated } from 'react-spring'
-import { Page1, Page2, Page3, Page4, FormTitle } from './QuizComponent'
+import { Page1, Page2, Page3, Page4, Page5, FormTitle } from './QuizComponent'
 import { Breadcrumb } from './Breadcrumb'
 
 const Wrapper = styled(animated.div)`
@@ -10,7 +10,7 @@ const Wrapper = styled(animated.div)`
   display: block;
   justify-content: center;
   align-items: center;
-  position:relative;
+  position: relative;
 `
 
 const StyledPage = styled(animated.div)`
@@ -19,15 +19,15 @@ const StyledPage = styled(animated.div)`
   display: block;
   align-items: center;
   justify-content: center;
-  margin:0 auto;
-  padding:0;
+  margin: 0 auto;
+  padding: 0;
 `
 const QuizContent = styled.div`
-  display:block;
-  width:100%;
-  clear:both;
-  position:absolute; 
-  top:0;
+  display: block;
+  width: 100%;
+  clear: both;
+  position: absolute;
+  top: 0;
 `
 
 const QuizNav = styled.div`
@@ -47,7 +47,7 @@ const Arrow = styled.div`
   color: #fff;
   border-radius: 8px;
   text-align: center;
-  margin:0 auto;
+  margin: 0 auto;
 `
 
 const BreadcrumbContainer = styled.div`
@@ -79,7 +79,12 @@ const pages = [
     <StyledPage style={style}>
       <Page4 />
     </StyledPage>
-  )
+  ),
+  ({ style }) => (
+    <StyledPage style={style}>
+      <Page5 />
+    </StyledPage>
+  ),
 ]
 
 const TransitionForm = () => {
@@ -102,11 +107,18 @@ const TransitionForm = () => {
           })}
         </QuizContent>
         <QuizNav>
-          <Arrow style={{float:"left", marginLeft:"100px"}} isHidden={index === 0} onClick={onBack}>
+          <Arrow
+            style={{ float: 'left', marginLeft: '100px' }}
+            isHidden={index === 0}
+            onClick={onBack}
+          >
             Back
           </Arrow>
-          <Arrow style={{float:"Right", marginRight:"100px"}} isHidden={index === pages.length - 1} onClick={onForward}>
-            Next
+          <Arrow
+            style={{ float: 'Right', marginRight: '100px' }}
+            onClick={index === pages.length - 1 ? null : onForward}
+          >
+            {index === pages.length - 1 ? 'Finish' : 'Next'}
           </Arrow>
           <BreadcrumbContainer>
             <Breadcrumb index={index} pages={pages} />

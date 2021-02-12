@@ -66,48 +66,138 @@ const SelectOption = styled.select`
 
 const Page1 = ({ style }) => {
   return (
-    <div>
-      <FormLabel component="legend" style={{ marginTop: '0px' }}>
-        Number of People in Your Home
-      </FormLabel>
-      <SelectOption aria-label="household" name="household">
-        <option value="2" label="1 to 2 persons" />
-        <option value="4" label="3 to 4 persons" />
-        <option value="5" label="5+ persons" />
-      </SelectOption>
-    </div>
+    <>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Type of dwelling
+        </FormLabel>
+        <SelectOption aria-label="dwelling" name="dwelling">
+          <option value="house" label="House" />
+          <option value="condo" label="Condo / Townhome" />
+          <option value="apartment" label="Apartment" />
+        </SelectOption>
+      </div>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Where will the pet be when you’re not home?
+        </FormLabel>
+        <SelectOption aria-label="notHome" name="notHome">
+          <option value="indoors" label="Indoors" />
+          <option value="outdoors" label="Outdoors" />
+          <option value="garage" label="Garage" />
+        </SelectOption>
+      </div>
+    </>
   )
 }
 
 const Page2 = ({ style }) => {
   return (
-    <div>
-      <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
-      <SelectOption aria-label="haschildren" name="hasChildren">
+    <>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Do you own a pet now?
+        </FormLabel>
+        <SelectOption aria-label="ownPet" name="ownPet">
           <option value="yes" label="Yes" />
-          <option value="4" label="No" />
-      </SelectOption>
-    </div>
+          <option value="no" label="No" />
+        </SelectOption>
+      </div>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Are you looking for a playful/active pet or a laid back lounge animal?
+        </FormLabel>
+        <SelectOption aria-label="activePet" name="activePet">
+          <option
+            value="yes"
+            label="I want a playful and active pet because I have an active lifestyle."
+          />
+          <option
+            value="no"
+            label="I want a laid back pet who enjoys lounging because I like to chill a lot. "
+          />
+        </SelectOption>
+      </div>
+    </>
   )
 }
 
 const Page3 = ({ style }) => {
   return (
-    <div>
-      <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
-      <SelectOption aria-label="haschildren" name="hasChildren">
+    <>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Do you need a kid-friendly pet?
+        </FormLabel>
+        <SelectOption aria-label="kidFriendly" name="kidFriendly">
           <option value="yes" label="Yes" />
-          <option value="4" label="No" />
-      </SelectOption>
-    </div>
+          <option value="no" label="No" />
+        </SelectOption>
+      </div>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          How many hours does your pet need to be able to tolerate being alone per most days?
+        </FormLabel>
+        <SelectOption aria-label="hoursAlone" name="hoursAlone">
+          <option value="0" label="2 hours or less" />
+          <option value="2" label="2 to 4 hours" />
+          <option value="4" label="4 to 8 hours" />
+          <option value="8" label="8 to 10 hours" />
+          <option value="12" label="12+ hours" />
+        </SelectOption>
+      </div>
+    </>
   )
 }
 
 const Page4 = ({ style }) => {
   return (
-    <div>
-      <FormLabel component="legend">ETC PUT MORE QUESTIONS HERE...</FormLabel>
-    </div>
+    <>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Are you looking for a “lap”-animal or quiet companion?
+        </FormLabel>
+        <SelectOption aria-label="lapPet" name="lapPet">
+          <option value="yes" label="I want my pet to enjoy cuddling." />
+          <option value="no" label="I don’t mind if my pet needs it’s space sometimes." />
+        </SelectOption>
+      </div>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Are you okay with adopting a pet who has allergies and needs medication?
+        </FormLabel>
+        <SelectOption aria-label="medication" name="medication">
+          <option value="yes" label="yes" />
+          <option value="no" label="no" />
+        </SelectOption>
+      </div>
+    </>
+  )
+}
+
+const Page5 = ({ style }) => {
+  return (
+    <>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Are you okay with adopting a pet who has pre-existing medical conditions and needs
+          medication?
+        </FormLabel>
+        <SelectOption aria-label="preexisting" name="preexisting">
+          <option value="yes" label="yes" />
+          <option value="no" label="no" />
+        </SelectOption>
+      </div>
+      <div>
+        <FormLabel component="legend" style={{ marginTop: '0px' }}>
+          Are you okay with a pet who has medical disabilities and needs special attention?
+        </FormLabel>
+        <SelectOption aria-label="disabilities" name="disabilities">
+          <option value="yes" label="yes" />
+          <option value="no" label="no" />
+        </SelectOption>
+      </div>
+    </>
   )
 }
 
@@ -119,50 +209,9 @@ const QuizComponent = () => {
   })
   return (
     <Wrapper>
-      {/* <FormTitle>Find the Perfect Pet for You</FormTitle>
-
-            <FormLabel component="legend" style={{ marginTop:"0px" }}>Number of People in Your Home</FormLabel>
-            <SelectOption aria-label="household" name="household">
-                <option value="2" label="1 to 2 persons" />
-                <option value="4" label="3 to 4 persons" />
-                <option value="5" label="5+ persons" />
-            </SelectOption>
-
-            <FormLabel component="legend">Do you live with any children in your home?</FormLabel>
-            <SelectOption aria-label="haschildren" name="hasChildren">
-                <option value="yes" label="Yes" />
-                <option value="4" label="No" />
-            </SelectOption>
-
-            <FormLabel component="legend">Type of Dwelling</FormLabel>
-            <SelectOption aria-label="housing" name="housing">
-                <option value="house" label="House" />
-                <option value="condo" label="Condo" />
-                <option value="apartment" label="Apartment" />
-            </SelectOption>
-
-            <FormLabel component="legend">
-                How many hours during the working days will you typically be away from home?
-            </FormLabel>
-            <SelectOption aria-label="hoursaway" name="hoursAway">
-                <option value="3" label="1 to 3 hours" />
-                <option value="5" label="3 to 5 hours" />
-                <option value="7" label="5 to 7 hours" />
-                <option value="8" label="8+ hours" />
-            </SelectOption>
-
-            <FormLabel component="legend">Where will the pet be when you’re not home?</FormLabel>
-            <SelectOption aria-label="whereWillPetLive" name="whereWillPetLive">
-                <option value="indoor" label="Indoor" />
-                <option value="outdoor" label="Outdoor" />
-                <option value="garage" label="Garage" />
-            </SelectOption>
-
-            <PrimaryButton>Submit Answers</PrimaryButton> */}
-
       <TransitionForm />
     </Wrapper>
   )
 }
 
-export { QuizComponent, Page1, Page2, Page3, Page4, FormTitle }
+export { QuizComponent, Page1, Page2, Page3, Page4, Page5, FormTitle }
