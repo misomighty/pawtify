@@ -33,7 +33,6 @@ import { Testimony } from './components/Testimony'
 import { ImpactBlock } from './components/ImpactBlock'
 import { Sitemap } from './components/Sitemap'
 import { CtaBanner } from './components/CtaBanner'
-import { QuizModal } from './components/QuizModal'
 import { QuizComponent } from './components/QuizComponent'
 
 const Body = styled.div``
@@ -222,6 +221,11 @@ const Footer = styled.div`
   font-size: 10px;
 `
 
+const NoStyleLink = styled.a`
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+`
+
 function App() {
   return (
     <Body>
@@ -255,7 +259,9 @@ function App() {
               >
                 <CTAWrapper>
                   <HeroTitle>Find your new best friend</HeroTitle>
-                  <QuizModal>Create your pet profile</QuizModal>
+                  <NoStyleLink href="#quiz">
+                    <PrimaryButton>Create your pet profile</PrimaryButton>
+                  </NoStyleLink>
                 </CTAWrapper>
               </Animated>
             </HeroContents>
