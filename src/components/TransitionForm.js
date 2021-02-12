@@ -92,7 +92,7 @@ const TransitionForm = () => {
   const onForward = useCallback(() => set((state) => state + 1), [])
   const onBack = useCallback(() => set((state) => state - 1), [])
   const transitions = useTransition(index, (p) => p, {
-    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+    from: { opacity: 0, transform: 'translate3d(100%,100%,0)' },
     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
     leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
   })
