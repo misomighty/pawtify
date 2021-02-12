@@ -25,6 +25,7 @@ const StyledPage = styled(animated.div)`
 const QuizContent = styled.div`
   display: block;
   width: 100%;
+  height: 100%;
   clear: both;
   position: absolute;
   top: 0;

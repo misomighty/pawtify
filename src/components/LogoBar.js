@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import Phone from '@material-ui/icons/Phone'
 import { Grid } from '@material-ui/core'
-import logo from '../img/PawtifyLogo10_27_2020.png'
+import logo from '../img/Small_Logo_White_Background.png'
 import { ContactCard } from './ContactCard'
 import { PrimaryButton } from './PrimaryButton'
 
@@ -14,8 +14,8 @@ const StyledGrid = styled(Grid)`
 `
 
 const Logo = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 `
 
 const LogoBar = () => {

@@ -9,7 +9,7 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import YouTubeIcon from '@material-ui/icons/YouTube'
-import logo from '../img/PawtifyLogo10_27_2020.png'
+import logo from '../img/Small_Logo_White_Background.png'
 
 const Wrapper = styled.div`
   width: auto;
@@ -103,7 +103,7 @@ const Sitemap = () => {
         <ScrollAnimation animateIn="fadeIn" delay="500">
           <Left>
             <AboutTitle>
-              <img src={logo} alt="logo" style={{ height: '100px', width: '100px' }} />
+              <img src={logo} alt="logo" style={{ height: '150px', width: '150px' }} />
             </AboutTitle>
             <AboutText>
               Pawtify is a new management system currently being developed to help streamline the
